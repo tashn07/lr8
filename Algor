@@ -1,0 +1,58 @@
+public class Algor {
+    // 1. Find the minimum value in an array of positive numbers
+    public static int findMinValue(int[] array) {
+        if (array == null || array.length == 0) {
+            return -1;
+        }
+
+        int min = Integer.MAX_VALUE;
+        for (int num : array) {
+            if (num < min) {
+                min = num;
+            }
+        }
+        return min;
+    }
+
+    // 2. Calculate the sum of elements in an array of negative numbers
+    public static int sumNegativeNumbers(int[] array) {
+        if (array == null) {
+            return 0;
+        }
+
+        int sum = 0;
+        for (int num : array) {
+            if (num < 0) {
+                sum += num;
+            }
+        }
+        return sum;
+    }
+
+    // 3. Calculate the Nth Fibonacci number
+    public static int calculateFibonacci(int n) {
+        if (n < 0) {
+            return -1;
+        }
+
+        if (n == 0) return 0;
+        if (n == 1) return 1;
+
+        int a = 0, b = 1;
+        for (int i = 2; i <= n; i++) {
+            int temp = a + b;
+            a = b;
+            b = temp;
+        }
+        return b;
+    }
+
+    // 4. Calculate the current in a circuit (I = V / R)
+    public static double calculateCurrent(double voltage, double resistance) {
+        if (resistance <= 0) {
+            return -1;
+        }
+        return voltage / resistance;
+    }
+
+}
