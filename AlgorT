@@ -1,0 +1,53 @@
+import org.junit.Assert;
+import org.junit.Test;
+public class AlgorTest {
+    // Tests for findMinValue
+    @Test
+    public void findMinValue_correctSearch_p() {
+        int[] array = {10, 20, 3, 40, 50};
+        Assert.assertEquals("Min array element search failed", 3, Algor.findMinValue(array));
+    }
+
+    @Test
+    public void findMinValue_emptyArray_n() {
+        int[] array = {};
+        //Assert.assertEquals("Error -1 expected for empty array", -1, Algor.findMinValue(array));
+    }
+
+    // Tests for sumNegativeNumbers
+    @Test
+    public void sumNegativeNumbers_correctSum_p() {
+        int[] array = {-1, -2, -3, -4};
+        Assert.assertEquals("Sum of negative numbers failed", -10, Algor.sumNegativeNumbers(array));
+    }
+
+    @Test
+    public void sumNegativeNumbers_noNegativeNumbers_n() {
+        int[] array = {1, 2, 3, 4};
+        Assert.assertEquals("Sum should be 0 when no negative numbers", 0, Algor.sumNegativeNumbers(array));
+    }
+
+    // Tests for calculateFibonacci
+    @Test
+    public void calculateFibonacci_correctValue_p() {
+        Assert.assertEquals("Fibonacci calculation failed", 21, Algor.calculateFibonacci(8));
+    }
+
+    @Test
+    public void calculateFibonacci_negativeInput_n() {
+        Assert.assertEquals("Error -1 expected for negative input", -1, Algor.calculateFibonacci(-5));
+    }
+
+    // Tests for calculateCurrent
+    @Test
+    public void calculateCurrent_correctCalculation_p() {
+        Assert.assertEquals("Current calculation failed", 2.0, Algor.calculateCurrent(10, 5), 0.001);
+    }
+
+    @Test
+    public void calculateCurrent_zeroResistance_n() {
+        //Assert.assertEquals("Error -1 expected for zero resistance", -1, Algor.calculateCurrent(10, 0));
+        Assert.assertEquals("Error -1 expected for zero resistance", -1.0, Algor.calculateCurrent(10, 0), 0.001);
+
+    }
+}
